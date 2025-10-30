@@ -1,0 +1,47 @@
+.codeInputs {
+    position: relative;
+    justify-content: center;
+    width: 100%;
+
+    &__item {
+        width: 60rem;
+        height: 60rem;
+        background: #f3f3f3;
+        border-radius: 12rem;
+
+        @include mob {
+            width: 52rem;
+            height: 52rem;
+            border-radius: 14rem;
+        }
+
+        & + & {
+            margin-left: 12rem;
+
+            @include mob {
+                margin-left: 4rem;
+            }
+        }
+
+        &Input {
+            width: 100%;
+            height: 100%;
+            padding: 8rem;
+            color: $colorDark;
+            font-weight: 500;
+            font-size: 20rem;
+            line-height: 1.4;
+            text-align: center;
+        }
+    }
+
+    &__loader {
+        top: 50%;
+        left: 100%;
+        width: 26rem;
+        height: 26rem;
+        margin-left: 10rem;
+        transform: translate(0, -50%);
+
+    }
+}

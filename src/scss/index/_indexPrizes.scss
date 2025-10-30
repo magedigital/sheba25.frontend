@@ -1,0 +1,183 @@
+.indexPrizes {
+    padding: 90rem 0 80rem;
+
+    @include bg("/media/main-back-03.jpg", 100% auto, center 15rem);
+
+    @include mob {
+        @include bg("/media/main-back-03-mob.jpg", 100% auto, center top);
+
+        padding: 64rem 0 32rem;
+    }
+
+    &__main {
+        align-items: center;
+        margin-bottom: 152rem;
+
+        @include mob {
+            margin-bottom: 100rem;
+        }
+
+        &Title {
+            margin-bottom: 70rem;
+
+            @include mob {
+                margin-bottom: 37rem;
+            }
+        }
+
+        &Prize {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding-bottom: 70rem;
+            overflow: hidden;
+            border: 1rem solid #dab582;
+            border-radius: 24rem;
+
+            @include mob {
+                padding-bottom: 50rem;
+                border-width: 2rem;
+                border-radius: 28rem;
+            }
+
+            &::after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 2;
+                width: 100%;
+                height: 70rem;
+                background: linear-gradient(to right, #c08d4e, #fcd5a3, #be894b);
+                content: "";
+                pointer-events: none;
+
+                @include mob {
+                    height: 50rem;
+                }
+            }
+
+            &Inner {
+                position: relative;
+                width: 100%;
+                padding: 76rem 64rem 122rem;
+
+                @include mob {
+                    padding: 46rem 24rem 250rem;
+                }
+
+                &::after {
+                    position: absolute;
+                    bottom: -16rem;
+                    left: -22rem;
+                    z-index: 2;
+                    width: 541rem;
+                    height: 266rem;
+                    content: "";
+                    pointer-events: none;
+
+                    @include bg("/media/prize-big-2-1.svg", contain, left bottom);
+
+                    @include mob {
+                        bottom: -12rem;
+                        left: -32rem;
+                        width: 390rem;
+                    }
+                }
+            }
+
+            &Content {
+                width: 390rem;
+                margin-left: auto;
+
+                @include mob {
+                    width: 100%;
+                }
+            }
+
+            &Support {
+                margin-bottom: 16rem;
+                color: #fff;
+                font-weight: 400;
+                font-size: 24rem;
+            }
+
+            &Title {
+                width: 100%;
+                height: 66rem;
+                margin: 0 0 16rem -4rem;
+
+                @include mob {
+                    margin-left: 0;
+                }
+
+                @include bg("/media/prize-big-2-2.svg", contain, left center);
+            }
+
+            &Text {
+                color: #fff;
+                font-weight: 400;
+                font-size: 34rem;
+
+                @include mob {
+                    font-size: 31rem;
+                }
+            }
+        }
+    }
+
+    &__sub {
+        align-items: center;
+
+        &Title {
+            margin-bottom: 80rem;
+
+            @include mob {
+                margin-bottom: 38rem;
+            }
+        }
+
+        &Prize {
+            position: relative;
+            width: 100%;
+            padding: 49rem 54rem 50rem;
+            border: 1rem solid #dab582;
+            border-radius: 32rem;
+
+            @include mob {
+                padding: 44rem 24rem 246rem;
+                border-width: 2rem;
+                border-radius: 38rem;
+            }
+
+            &Text {
+                max-width: 352rem;
+                color: #fff;
+                font-size: 24rem;
+                line-height: 1.3;
+
+                @include mob {
+                    font-size: 23rem;
+                }
+
+                & b {
+                    color: #ffe0a7;
+                    font-weight: 600;
+                }
+            }
+
+            &Image {
+                position: absolute;
+                right: 41rem;
+                bottom: 0;
+                z-index: 2;
+                width: 324rem;
+                height: 214rem;
+                pointer-events: none;
+
+                @include mob {
+                    right: 30rem;
+                }
+            }
+        }
+    }
+}

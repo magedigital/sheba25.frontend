@@ -1,0 +1,56 @@
+.cookies {
+    align-items: center;
+    width: 100%;
+    padding: 20rem 38rem 25rem;
+    background: #fff;
+    border-radius: 16rem;
+    box-shadow: 0 0 32rem 0 rgba(#000, 0.15);
+
+    @include mob {
+        padding: 24rem 20rem 20rem;
+    }
+
+    &__content {
+        margin-bottom: 12rem;
+        color: $colorDark;
+        font-size: 12rem;
+        line-height: 1.6;
+        text-align: center;
+
+        @include mob {
+            max-width: 100%;
+            font-size: 15rem;
+        }
+    }
+
+    &__buttons {
+        align-items: center;
+        margin-bottom: 17rem;
+    }
+
+    &__button {
+        width: 150rem;
+
+        @include mob {
+            width: 170rem;
+        }
+
+        & + & {
+            margin-left: 14rem;
+
+            @include mob {
+                margin-left: 15rem;
+            }
+        }
+    }
+
+    &__link {
+        color: $colorMain;
+        font-size: 14rem;
+        border-bottom: 1px solid rgba($colorMain, 0.6);
+
+        @include mob {
+            font-size: 16rem;
+        }
+    }
+}

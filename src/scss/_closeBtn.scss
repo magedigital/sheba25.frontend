@@ -1,0 +1,39 @@
+.closeBtn {
+    position: relative;
+    z-index: 2;
+    width: 56rem;
+    height: 56rem;
+    background: linear-gradient(to bottom, #c08d4e, #fcd5a3, #be894b);
+    border-radius: 50%;
+
+    &::before {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        z-index: -1;
+        width: calc(100% - 4rem);
+        height: calc(100% - 4rem);
+        background: linear-gradient(to right, #c08d4e, #fcd5a3);
+        border-radius: inherit;
+        content: "";
+    }
+
+    @include mob {
+        width: 40rem;
+        height: 40rem;
+    }
+
+    @include button;
+
+    &__icon {
+        width: 18rem;
+        height: 18rem;
+
+        @include icon(#fff);
+
+        @include mob {
+            width: 16rem;
+            height: 16rem;
+        }
+    }
+}

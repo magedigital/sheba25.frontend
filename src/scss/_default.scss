@@ -1,0 +1,386 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-family: Montserrat;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: unset;
+    text-align: left;
+    text-decoration: none;
+    list-style-type: none;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+@mixin bg($url, $size, $pos, $rep: no-repeat) {
+    background: url($url) $rep;
+    background-position: $pos;
+    background-size: $size;
+}
+
+@mixin mediaMin($w) {
+    @media screen and (min-width: $w) {
+        @content;
+    }
+}
+
+@mixin media($w1, $w2) {
+    @media screen and (min-width: $w1) and (max-width: $w2) {
+        @content;
+    }
+}
+
+@mixin mob() {
+    @include media(0, $mediaM) {
+        @content;
+    }
+}
+
+@mixin desk() {
+    @include mediaMin($mediaM + 1px) {
+        @content;
+    }
+}
+
+html {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+    font-size: calc(100vw / 1512);
+
+    @include mob {
+        font-size: calc(100vw / 414);
+    }
+}
+
+@mixin icon($color) {
+    & .icon__fill {
+        fill: $color;
+    }
+
+    & .icon__stroke {
+        stroke: $color;
+    }
+}
+
+@mixin blur($val) {
+    & {
+        backdrop-filter: saturate(180%) blur($val);
+
+        //
+        -webkit-backdrop-filter: saturate(180%) blur($val);
+    }
+}
+
+@mixin button($value: 0.96) {
+    will-change: transform;
+
+    & {
+        transition: $trans;
+    }
+
+    &:active {
+        transform: scale(#{$value});
+    }
+}
+
+._ROW {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &._ROW_CENTER {
+        align-items: center;
+        justify-content: center;
+    }
+
+    &._ROW_V_CENTER {
+        align-items: center;
+    }
+
+    &._ROW_H_CENTER {
+        justify-content: center;
+    }
+}
+
+._COL {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &._COL_CENTER {
+        align-items: center;
+        justify-content: center;
+    }
+
+    &._COL_V_CENTER {
+        justify-content: center;
+    }
+
+    &._COL_H_CENTER {
+        align-items: center;
+    }
+}
+
+._CLICK {
+    @include mediaMin($mediaM + 1px) {
+        cursor: pointer;
+    }
+
+    user-select: none;
+}
+
+._SECTION {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+._INNER {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 1146rem;
+    margin: 0 auto;
+
+    @include mob {
+        width: 380rem;
+    }
+}
+
+._INNER_2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 1026rem;
+    margin: 0 auto;
+
+    @include mob {
+        width: 380rem;
+    }
+}
+
+._FULL {
+    width: 100%;
+    height: 100%;
+}
+
+._FULL_W {
+    width: 100%;
+}
+
+._FULL_H {
+    height: 100%;
+}
+
+label,
+a {
+    @extend ._CLICK;
+}
+
+._NOSCROLL {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+}
+
+._LOADER {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    transition: $trans;
+    pointer-events: none;
+
+    &._SCROLL {
+        top: auto;
+        bottom: 0;
+        height: 30%;
+        min-height: 150rem;
+        padding-top: 64rem;
+        background: linear-gradient(to top, #fff, rgba(#fff, 0));
+
+        &._grey {
+            background: linear-gradient(to top, #f3f7f9, rgba(#f3f7f9, 0));
+        }
+
+        &._reverse {
+            top: auto;
+            bottom: auto;
+            padding-top: 0;
+            padding-bottom: 64rem;
+            background: linear-gradient(to bottom, #fff, rgba(#fff, 0));
+        }
+
+        &._grey._reverse {
+            background: linear-gradient(to bottom, #f3f7f9, rgba(#f3f7f9, 0));
+        }
+    }
+
+    &:not([data-show]) {
+        opacity: 0;
+    }
+}
+
+._POPUPBACK {
+    background: rgba(#fff, 0.7);
+}
+
+._LOADERITEM {
+    width: 28rem;
+    height: 28rem;
+    margin: auto;
+}
+
+._ANIMATE {
+    transition: $trans;
+
+    &:not(._show) {
+        opacity: 0;
+    }
+}
+
+@mixin editor() {
+    &,
+    & * {
+        @content;
+    }
+}
+
+._NOWRAP {
+    white-space: nowrap;
+}
+
+._WRAP {
+    word-break: break-all;
+}
+
+._INFOBLOCKWRAPPER {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin hover() {
+    @media (hover: hover) {
+        @content;
+    }
+}
+
+._DESKTOP {
+    @include mob {
+        display: none;
+    }
+}
+
+._MOBILE {
+    @include mediaMin($mediaM + 1px) {
+        display: none;
+    }
+}
+
+._START_SECTION {
+    @include bg("/media/back-inner.jpg", 100% auto, center top);
+
+    @include mob {
+        @include bg("/media/back-inner-mob.jpg", 100% auto, center top);
+    }
+}
+
+._TITLE {
+    color: #dab582;
+    font-weight: 600;
+    font-size: 52rem;
+    font-family: Circe;
+    line-height: 1.3;
+    letter-spacing: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include mob {
+        font-size: 31rem;
+    }
+
+    &._TITLE_MED {
+        font-size: 36rem;
+
+        @include mob {
+            font-size: 26rem;
+        }
+    }
+}
+
+._TEXT {
+    margin-top: 8rem;
+    color: #fff;
+    font-size: 20rem;
+    line-height: 1.3;
+    text-align: center;
+
+    @include mob {
+        margin-top: 12rem;
+        font-size: 21rem;
+    }
+}
+
+._BADGE {
+    padding: 6rem 10rem;
+    color: #a82185;
+    font-weight: 600;
+    font-size: 16rem;
+    line-height: 1.3;
+    background: #fed900;
+    border-radius: 8rem;
+
+    @include mob {
+        padding: 4rem 8rem;
+        font-size: 15rem;
+    }
+}
+
+._BACK {
+    // @include bg("/media/back-knit-title.jpg", 500rem auto, left top);
+
+    background-repeat: repeat;
+
+    @include mob {
+        background-size: 100% auto;
+    }
+}
+
+._BACK_LINE {
+    position: absolute;
+    top: 22rem;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 0 6rem;
+    pointer-events: none;
+
+    @include mob {
+        top: 26rem;
+        padding: 0 10rem;
+    }
+}

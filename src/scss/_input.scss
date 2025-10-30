@@ -1,0 +1,103 @@
+.input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 16rem;
+
+    &._inner {
+        background: #fff;
+
+        @include mob {
+            border-width: 4rem;
+            border-radius: 12rem;
+        }
+    }
+
+    &._grey {
+        background: #fff;
+
+        @include mob {
+            border-radius: 18rem;
+        }
+    }
+
+    &._white {
+        background: #fff;
+    }
+
+    @include mob {
+        border-radius: 12rem;
+    }
+
+    &._static {
+        display: flex;
+    }
+
+    &__field {
+        width: 100%;
+        height: 100%;
+        color: $colorDark;
+        font-weight: 400;
+        line-height: 1.4;
+        cursor: text;
+        resize: none;
+    }
+
+    &._static &__field {
+        position: relative;
+        height: auto;
+        margin: auto 0;
+        overflow: hidden;
+        line-height: 1.5;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &__support {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: #000;
+        line-height: 1.4;
+    }
+
+    &._area &__support {
+        align-items: flex-start;
+    }
+
+    &._focus &__support,
+    &:not(._empty) &__support {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &__field,
+    &__support {
+        padding: 16rem 20rem;
+        font-size: 16rem;
+        line-height: 1.3;
+        cursor: text;
+        transition: $trans;
+    }
+
+    &._emptySize &__field,
+    &._emptySize &__support {
+        padding: 0;
+    }
+
+    &._center &__field,
+    &._center &__support {
+        justify-content: center;
+        text-align: center;
+    }
+
+    &._error &__field,
+    &._error &__support {
+        color: $colorError;
+        font-weight: 600;
+    }
+}

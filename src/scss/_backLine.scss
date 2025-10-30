@@ -1,0 +1,53 @@
+.backLine {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        width: calc(50% - 36rem);
+        height: 5rem;
+        transform: translate(0, -50%);
+        content: "";
+
+        // @include bg("/media/inner-line.svg", contain, center top);
+
+        @include mob {
+            width: calc(50% - 30rem);
+
+            // @include bg("/media/inner-line-mob.svg", contain, center top);
+        }
+    }
+
+    &::before {
+        left: 0;
+        object-position: left top;
+
+        @include mob {
+            object-position: left top;
+        }
+    }
+
+    &::after {
+        right: 0;
+        object-position: right top;
+
+        @include mob {
+            object-position: right top;
+        }
+    }
+
+    &__icon {
+        width: 40rem;
+        height: 34rem;
+        object-fit: contain;
+
+        @include mob {
+            width: 38rem;
+            height: 32rem;
+        }
+    }
+}

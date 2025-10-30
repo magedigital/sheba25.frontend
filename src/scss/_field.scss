@@ -1,0 +1,24 @@
+.field {
+    width: 100%;
+    height: 100%;
+
+    &__support {
+        margin-bottom: 8rem;
+        color: #fff;
+        font-size: 16rem;
+        line-height: 1.45;
+    }
+
+    &__box {
+        width: 100%;
+        height: 56rem;
+
+        @include mob {
+            height: 60rem;
+        }
+    }
+
+    &._textarea &__box {
+        height: 120rem;
+    }
+}

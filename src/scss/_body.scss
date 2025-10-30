@@ -1,0 +1,118 @@
+.body {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-size-adjust: none;
+
+    &__font {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0;
+        pointer-events: none;
+
+        & span {
+            font-weight: 400;
+        }
+
+        & p {
+            font-weight: 500;
+        }
+
+        & b {
+            font-weight: 600;
+        }
+    }
+
+    &__topBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        pointer-events: none;
+    }
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        background: #020202;
+    }
+
+    &__pages {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__page {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+
+        &:not([data-show]) {
+            opacity: 0;
+        }
+
+        &._popup {
+            z-index: 10000;
+            background: rgba(#000, 0.8);
+        }
+
+        & .list__itemBox {
+            // height: auto;
+        }
+
+        &[data-id="auth"] .list__itemBox {
+            height: 100%;
+
+            & .innerPage,
+            & .innerPage__inner {
+                height: 100%;
+            }
+        }
+
+        &._auth:not([data-show])._prev {
+            transform: translate(-32rem, 0);
+        }
+
+        &._auth:not([data-show])._next {
+            transform: translate(32rem, 0);
+        }
+    }
+
+    &__popup {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+
+        &Inner {
+            transition: $trans;
+
+            &:not(._show) {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__cookies {
+        position: fixed;
+        bottom: 32rem;
+        left: 50%;
+        z-index: 998;
+        width: 868rem;
+        transform: translate(-50%, 0);
+        transition: $trans;
+
+        &:not([data-show]) {
+            transform: translate(-50%, 20rem);
+            pointer-events: none;
+        }
+
+        @include mob {
+            bottom: 16rem;
+            width: 94vw;
+        }
+    }
+}

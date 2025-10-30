@@ -1,0 +1,96 @@
+.select {
+    position: relative;
+
+    &__view {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 16rem 20rem;
+        background: #fff;
+        border-radius: 16rem;
+
+        @include mob {
+            border-width: 4rem;
+            border-radius: 12rem;
+        }
+
+        &Inner {
+            padding-right: 28rem;
+            overflow: hidden;
+            color: $colorDark;
+            font-size: 16rem;
+            line-height: 1.3;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            transition: $trans;
+        }
+
+        &Icon {
+            position: absolute;
+            top: 50%;
+            right: 20rem;
+            z-index: 2;
+            width: 20rem;
+            height: 20rem;
+            transform: translate(0, -50%);
+            transition: $trans;
+
+            @include icon(#dab582);
+        }
+    }
+
+    &._show &__viewIcon {
+        transform: translate(0, -50%) rotate(180deg);
+    }
+
+    &__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 2;
+        margin-top: 4rem;
+        padding: 10rem;
+        background: #fff;
+        border-radius: 16rem;
+
+        @include mob {
+            border-width: 4rem;
+        }
+
+        &Inner {
+            position: relative;
+            z-index: 2;
+            max-height: 180rem;
+            padding: 10rem;
+            overflow: hidden;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 6rem;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #fff;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #dab582;
+                border-radius: 20rem;
+            }
+        }
+
+        &Item {
+            font-size: 16rem;
+            line-height: 1.3;
+            transition: $trans;
+
+            &:hover {
+                color: $colorMain;
+            }
+
+            & + & {
+                margin-top: 14rem;
+            }
+        }
+    }
+}

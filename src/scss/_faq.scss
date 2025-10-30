@@ -1,0 +1,105 @@
+.faq {
+    &__items {
+        margin-bottom: 180rem;
+
+        @include mob {
+            margin-bottom: 32rem;
+        }
+    }
+
+    &__item {
+        &:first-child {
+            border-top: 1rem solid #fff;
+        }
+    }
+
+    &__form {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: 70rem 0 60rem;
+        overflow: hidden;
+        border: 3rem solid #c08d4e;
+        border-radius: 24rem;
+
+        &._success {
+            height: 250rem !important;
+            border-width: 4rem;
+        }
+
+        @include mob {
+            width: 100%;
+            padding: 32rem 12rem 36rem;
+            border-radius: 24rem;
+        }
+
+        &Success {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 24rem;
+
+            &Title {
+                margin-bottom: 24rem;
+                color: #dab582;
+                font-size: 32rem;
+                font-family: Circe;
+                text-align: center;
+                text-transform: uppercase;
+
+                @include mob {
+                    font-size: 26rem;
+                }
+            }
+
+            &Text {
+                color: #fff;
+                font-size: 20rem;
+                line-height: 1.4;
+                text-align: center;
+
+                @include mob {
+                    font-size: 18rem;
+                }
+            }
+        }
+
+        &Inner {
+            width: 750rem;
+            transition: $trans;
+
+            @include mob {
+                width: 100%;
+            }
+        }
+
+        &._success &Inner {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        &Title {
+            margin-bottom: 48rem;
+            color: #dab582;
+            font-size: 36rem;
+            font-family: Circe;
+            line-height: 1.1;
+            text-align: center;
+            text-transform: uppercase;
+
+            @include mob {
+                max-width: 98%;
+                margin: 0 auto;
+                margin-bottom: 28rem;
+                font-size: 26rem;
+                line-height: 1.2;
+            }
+        }
+    }
+}

@@ -1,0 +1,176 @@
+.innerPage {
+    position: relative;
+    z-index: 1;
+
+    &__decors {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &__line {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+    }
+
+    &__line._1 {
+        z-index: -1;
+        width: calc(100% + 20rem);
+        height: 116rem;
+        margin-top: -130rem;
+        background: #ff49b8;
+        transform: translate(-50%, -50%) rotate(6deg);
+
+        @include mob {
+            height: 74rem;
+            margin-top: 90rem;
+        }
+    }
+
+    &__line._1 &__lineItem {
+        position: absolute;
+        top: 10rem;
+        left: 0;
+        height: calc(100% - 20rem);
+
+        @include desk {
+            animation: 9s infinite innerPageBackLine1 linear;
+
+            @keyframes innerPageBackLine1 {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                100% {
+                    transform: translate(-1180rem, 0);
+                }
+            }
+
+            &:nth-child(2) {
+                left: 1180rem;
+            }
+
+            &:nth-child(3) {
+                left: 1180rem * 2;
+            }
+        }
+
+        @include mob {
+            animation: 9s infinite innerPageBackLine1Mob linear;
+
+            @keyframes innerPageBackLine1Mob {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                100% {
+                    transform: translate(-666rem, 0);
+                }
+            }
+
+            &:nth-child(2) {
+                left: 666rem;
+            }
+
+            &:nth-child(3) {
+                left: 666rem * 2;
+            }
+        }
+    }
+
+    &__line._2 {
+        z-index: -2;
+        width: calc(100% + 20rem);
+        height: 170rem;
+        margin-top: 90rem;
+        background: #ff49b8;
+        transform: translate(-50%, -50%) rotate(-6deg);
+        opacity: 0.5;
+
+        &._inner {
+            margin-top: 0;
+            background: #f33428;
+            opacity: 1;
+
+            @include mob {
+                margin-top: 230rem;
+            }
+        }
+
+        @include mob {
+            height: 100rem;
+            margin-top: 180rem;
+        }
+    }
+
+    &__line._2 &__lineItem {
+        position: absolute;
+        top: 10rem;
+        left: 0;
+        height: calc(100% - 20rem);
+
+        @include desk {
+            animation: 10s infinite innerPageBackLine2 linear;
+
+            @keyframes innerPageBackLine2 {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                100% {
+                    transform: translate(1840rem, 0);
+                }
+            }
+
+            &:nth-child(2) {
+                left: -1840rem;
+            }
+
+            &:nth-child(3) {
+                left: -1840rem * 2;
+            }
+        }
+
+        @include mob {
+            animation: 9s infinite innerPageBackLine2Mob linear;
+
+            @keyframes innerPageBackLine2Mob {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                100% {
+                    transform: translate(990rem, 0);
+                }
+            }
+
+            &:nth-child(2) {
+                left: -990rem;
+            }
+
+            &:nth-child(3) {
+                left: -990rem * 2;
+            }
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 100rem + 16rem;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, 0);
+        transition: $trans;
+
+        &:not(._show) {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}

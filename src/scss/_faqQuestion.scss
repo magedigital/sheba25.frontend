@@ -1,0 +1,213 @@
+.faqQuestion {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1rem;
+        background: #fff;
+        transition: $trans;
+        content: "";
+    }
+
+    &._show::after {
+        opacity: 0;
+    }
+
+    &__head {
+        position: relative;
+        padding: 20rem 0;
+
+        @include mob {
+            padding: 14rem 0;
+        }
+
+        &Inner {
+            position: relative;
+            padding: 0 32rem 0 64rem;
+
+            @include mob {
+                padding: 0 42rem 0 58rem;
+            }
+        }
+
+        &Number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 48rem;
+            height: 48rem;
+            color: $colorDark;
+            font-weight: 500;
+            font-size: 26rem;
+            font-family: Circe;
+            background: #dab582;
+            border-radius: 360rem;
+
+            @include mob {
+                top: 3rem;
+                width: 44rem;
+                height: 44rem;
+                padding-bottom: 2rem;
+                font-weight: 600;
+                font-size: 20rem;
+            }
+        }
+
+        &Title {
+            padding: 9rem 0;
+            color: #fff;
+            font-weight: 500;
+            font-size: 24rem;
+            line-height: 1.2;
+
+            @include mob {
+                display: flex;
+                align-items: center;
+                min-height: 52rem;
+                padding: 2rem 0;
+                font-size: 20rem;
+                line-height: 1.25;
+            }
+        }
+
+        &Icon {
+            position: absolute;
+            top: 12rem;
+            right: 12rem;
+            width: 20rem;
+            height: 20rem;
+            object-fit: contain;
+            transition: $trans;
+
+            @include icon(#dab582);
+
+            @include mob {
+                top: 50%;
+                right: 2rem;
+                width: 16rem;
+                height: 16rem;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+
+    &._show &__headIcon {
+        transform: rotate(180deg);
+
+        @include mob {
+            transform: translate(0, -50%) rotate(180deg);
+        }
+    }
+
+    &__content {
+        transition: $trans;
+
+        &Inner {
+            padding: 20rem;
+            color: $colorDark;
+            font-weight: 400;
+            font-size: 20rem;
+            line-height: 1.3;
+            background: #fff;
+            border-radius: 24rem;
+
+            @include mob {
+                padding: 14rem;
+                font-size: 18rem;
+            }
+
+            & > * + * {
+                margin-top: 20rem;
+            }
+        }
+
+        & p,
+        & li {
+            color: $colorDark;
+            font-weight: 400;
+            font-size: 20rem;
+            line-height: 1.3;
+
+            @include mob {
+                font-size: 18rem;
+            }
+
+            & a {
+                display: inline;
+                color: #05564d;
+                border-bottom: 1px solid #05564d;
+            }
+        }
+
+        & ol {
+            counter-reset: olCounter;
+        }
+
+        & li + li {
+            margin-top: 12rem;
+        }
+
+        & ol li + li {
+            margin-top: 20rem;
+        }
+
+        & ol li {
+            position: relative;
+            padding-left: 48rem;
+            counter-increment: olCounter;
+
+            &::before {
+                position: absolute;
+                top: -4rem;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 36rem;
+                height: 36rem;
+                color: #fff;
+                font-weight: 600;
+                font-size: 19rem;
+                font-family: Circe;
+                background: #05564d;
+                border-radius: 12rem;
+                content: counter(olCounter);
+
+                @include mob {
+                    border-radius: 10rem;
+                }
+            }
+        }
+
+        & ul {
+            padding-left: 16rem;
+        }
+
+        & ul li {
+            position: relative;
+            padding-left: 14rem;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: $colorMain;
+                font-weight: 600;
+                font-size: 20rem;
+                line-height: 1.3;
+                content: "•";
+            }
+        }
+
+        & img {
+            display: block;
+            max-width: 100%;
+        }
+    }
+}

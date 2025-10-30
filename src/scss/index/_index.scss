@@ -1,0 +1,10 @@
+.index {
+    background: #020202;
+
+    &__section {
+        &._about {
+            position: relative;
+            z-index: 2;
+        }
+    }
+}

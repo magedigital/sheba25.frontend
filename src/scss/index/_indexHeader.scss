@@ -1,0 +1,55 @@
+.indexHeader {
+    position: relative;
+    z-index: 2;
+    padding: 116rem 0 66rem;
+
+    @include bg("/media/main-back-01.jpg", 100% auto, center top);
+
+    @include mob {
+        @include bg("/media/main-back-01-mob.jpg", 100% auto, center top);
+
+        padding: 122rem 0 0;
+    }
+
+    &__slogan {
+        width: 398rem;
+        height: 145rem;
+        margin: 0 0 372rem 276rem;
+
+        @include bg("/media/slogan.svg", contain, center);
+
+        @include mob {
+            width: 228rem;
+            height: 120rem;
+            margin: 0 18rem 232rem auto;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    &__button {
+        width: 205rem;
+        margin-bottom: 35rem;
+
+        @include mob {
+            width: 270rem;
+            margin-bottom: 24rem;
+        }
+    }
+
+    &__text {
+        color: #fff;
+        font-size: 16rem;
+        line-height: 1.25;
+        text-align: center;
+
+        @include mob {
+            font-size: 18rem;
+        }
+    }
+}
