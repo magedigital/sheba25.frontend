@@ -13,8 +13,8 @@
     &__content {
         margin-bottom: 12rem;
         color: $colorDark;
-        font-size: 12rem;
-        line-height: 1.6;
+        font-size: 13rem;
+        line-height: 1.45;
         text-align: center;
 
         @include mob {
@@ -45,9 +45,10 @@
     }
 
     &__link {
-        color: $colorMain;
+        color: #c08d4e;
+        font-weight: 500;
         font-size: 14rem;
-        border-bottom: 1px solid rgba($colorMain, 0.6);
+        border-bottom: 1px solid rgba(#c08d4e, 0.6);
 
         @include mob {
             font-size: 16rem;

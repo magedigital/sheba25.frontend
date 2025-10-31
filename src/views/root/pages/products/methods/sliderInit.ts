@@ -25,11 +25,6 @@ const sliderInit: I['sliderInit'] = function () {
             }
 
             if (typeof currentKey === 'number') {
-                this.setState({
-                    current: currentKey,
-                    currentId: Object.keys(content!.components.sections)[currentKey],
-                });
-
                 const currentNode = this.parent.current!.querySelector(
                     `.products__tabsItem[data-id="${current}"]`,
                 ) as HTMLElement;
@@ -58,6 +53,13 @@ const sliderInit: I['sliderInit'] = function () {
                     ) as HTMLElement;
 
                     if (realCurrentNode) {
+                        const realCurrentId = +realCurrentNode.getAttribute('data-key')!;
+
+                        this.setState({
+                            current: realCurrentId,
+                            currentId: Object.keys(content!.components.sections)[realCurrentId],
+                        });
+
                         realCurrentNode.setAttribute('data-cur', 'true');
 
                         if (device === 'desktop') {
