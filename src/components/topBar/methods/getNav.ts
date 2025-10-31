@@ -8,7 +8,7 @@ const getNav: I['getNav'] = function () {
     nav.push({ name: 'index', pageName: 'index' });
     nav.push({ name: 'rules', text: 'КАК УЧАСТВОВАТЬ', ancor: 'rules' });
     nav.push({ name: 'prizes', text: 'ПРИЗЫ', ancor: 'prizes' });
-    // nav.push({ name: 'winners', pageName: 'winners' });
+    nav.push({ name: 'products', pageName: 'products' });
     nav.push({ name: 'faq', pageName: 'faq' });
     nav.push({ name: 'profile', pageName: 'profile' });
 

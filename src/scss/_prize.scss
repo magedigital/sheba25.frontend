@@ -1,0 +1,78 @@
+.prize {
+    width: 100%;
+
+    &__head {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 285rem;
+        margin-bottom: 20rem;
+        border: 3rem solid #c08d4e;
+        border-radius: 24rem;
+
+        @include mob {
+            height: 320rem;
+        }
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            width: 140%;
+            height: 140%;
+            transform: translate(-50%, -50%);
+            content: "";
+
+            @include bg("/media/back-prizes-lk.png", contain, center);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__status {
+        margin-bottom: 30rem;
+        padding: 8rem 12rem;
+        color: #fff;
+        font-weight: 500;
+        font-size: 16rem;
+        text-transform: uppercase;
+        background: #8f8f8f;
+        border-radius: 6rem;
+
+        @include mob {
+            margin-bottom: 16rem;
+            padding: 12rem;
+        }
+    }
+
+    &._SENT &__status {
+        background: #05564d;
+    }
+
+    &._ERROR &__status {
+        background: #f50237;
+    }
+
+    &._RECEIVED &__status {
+        background: #209c0d;
+    }
+
+    &__title {
+        width: 100%;
+        color: #fff;
+        font-size: 22rem;
+        line-height: 1.3;
+        text-align: center;
+    }
+}

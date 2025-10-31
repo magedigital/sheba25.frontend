@@ -10,11 +10,6 @@ const pages = [
         links: ['404'],
         name: '404',
     },
-    // {
-    //     links: ['winners'],
-    //     name: 'winners',
-    //     content: 'Победители',
-    // },
     {
         links: ['faq'],
         name: 'faq',
@@ -23,6 +18,7 @@ const pages = [
     {
         links: ['products'],
         name: 'products',
+        content: 'О продукте',
     },
     {
         links: ['cheque'],

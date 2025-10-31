@@ -33,11 +33,7 @@ class DeskSlider
         return (
             <div className="productsBlock__sliderCard">
                 <div className="productsBlock__sliderCardHead">
-                    <img
-                        src={require(`@media/${item.thumb}`)}
-                        alt=""
-                        className="productsBlock__sliderCardImage"
-                    />
+                    <img src={item.thumb} alt="" className="productsBlock__sliderCardImage" />
                 </div>
                 <p
                     className="productsBlock__sliderCardName"

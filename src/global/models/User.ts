@@ -7,6 +7,7 @@ type UserT = {
         phone: string;
         email: string;
     };
+    lentaCard: string;
     exp: number;
     mailing: '1' | '0';
     extraDataRequired?: Record<

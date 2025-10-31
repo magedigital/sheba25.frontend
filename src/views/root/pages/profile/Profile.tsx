@@ -13,7 +13,6 @@ import renderCheques from './renders/renderCheques.tsx';
 import renderContent from './renders/renderContent.tsx';
 import renderHead from './renders/renderHead.tsx';
 import renderMain from './renders/renderMain.tsx';
-import renderPrize from './renders/renderPrize.tsx';
 import renderPrizes from './renders/renderPrizes.tsx';
 import getContent from './requests/getContent.ts';
 
@@ -41,7 +40,6 @@ class Profile extends React.Component<ProfileI['props'], ProfileI['state']> impl
     renderMain = renderMain;
     renderCheques = renderCheques;
     renderPrizes = renderPrizes;
-    renderPrize = renderPrize;
 
     componentDidMount(): void {
         const page = this.parent.current!.closest('.body__page') as HTMLElement;

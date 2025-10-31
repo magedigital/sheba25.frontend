@@ -17,107 +17,32 @@
     }
 
     &__prizes {
-        padding: 28rem 36rem 60rem;
-        background: #8f0072;
-        border: 4rem solid #dc3dbc;
-        border-radius: 36rem;
-
-        @include mob {
-            padding: 20rem 20rem 50rem;
-        }
+        align-items: center;
+        margin-top: 120rem;
 
         &Title {
-            margin-bottom: 36rem;
-
-            @include mob {
-                margin-bottom: 26rem;
-            }
+            margin-bottom: 60rem;
         }
 
         &Cards {
             display: flex;
-            justify-content: center;
-            width: calc(100% + 40rem);
+            flex-wrap: wrap;
+            width: calc(100% + 60rem);
 
             @include mob {
-                flex-direction: column;
-                justify-content: flex-start;
-                width: 72%;
+                width: 94%;
             }
         }
 
         &Card {
             width: calc(100% / 3);
-            padding: 0 20rem;
+            margin-bottom: 90rem;
+            padding: 0 30rem;
 
             @include mob {
                 width: 100%;
+                margin-bottom: 32rem;
                 padding: 0;
-            }
-        }
-    }
-
-    &__prize {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        padding: 36rem 0 10rem;
-        aspect-ratio: 1;
-
-        &::before {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            z-index: -1;
-            width: 100%;
-            background: linear-gradient(to bottom, #ff4adb, rgba(#dc3dbc, 0) 69%);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            content: "";
-            aspect-ratio: 1;
-        }
-
-        @include mob {
-            padding: 0;
-        }
-
-        &Image {
-            width: 165rem;
-            height: 165rem;
-            margin-bottom: 23rem;
-            object-fit: contain;
-
-            @include mob {
-                width: 130rem;
-                height: 130rem;
-            }
-        }
-
-        &Status {
-            margin-bottom: 25rem;
-            padding: 6rem 10rem;
-            color: $colorMain;
-            font-weight: 600;
-            font-size: 16rem;
-            background: #fed900;
-            border-radius: 8rem;
-
-            @include mob {
-                font-size: 18rem;
-            }
-        }
-
-        &Name {
-            max-width: 60%;
-            color: #fff;
-            font-weight: 600;
-            font-size: 18rem;
-            line-height: 1.45;
-            text-align: center;
-
-            @include mob {
-                max-width: 100%;
-                font-size: 20rem;
             }
         }
     }

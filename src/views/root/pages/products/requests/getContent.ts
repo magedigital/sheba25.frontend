@@ -2,16 +2,17 @@ import AxiosInst from '@functions/initAxios.ts';
 import { setLocalContent } from '@functions/localContent.ts';
 import setAsyncState from '@functions/setAsyncState.ts';
 
-import { MainContentT } from '../../index/types.ts';
-import I from '../types.ts';
+import I, { ProductsContentT } from '../types.ts';
 
 const getContent: I['getContent'] = async function () {
     try {
-        const response = await AxiosInst.get<{}, ResponseT<MainContentT>>('/content/main/');
+        const response = await AxiosInst.get<{}, ResponseT<ProductsContentT>>('/content/about/');
 
-        setLocalContent('indexContent', response.data!);
+        setLocalContent('productsContent', response.data!);
 
         await setAsyncState.call(this, { content: response.data });
+
+        this.sliderInit();
     } catch (error) {}
 };
 

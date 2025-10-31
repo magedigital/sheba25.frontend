@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Button from '@components/button/Button.tsx';
 import changePage from '@functions/changePage.ts';
 import { StoreT } from '@global/types.ts';
 
@@ -32,7 +33,16 @@ class ProfileMain
                     <p className="profileMain__name">
                         {user?.personal.firstName} {user?.personal.lastName}
                     </p>
-                    <div className="profileMain__id">ID 4362</div>
+                    <div className="profileMain__button">
+                        <Button
+                            className="_main"
+                            onClick={() => {
+                                changePage({ pageName: 'cheque' });
+                            }}
+                        >
+                            Загрузить чек
+                        </Button>
+                    </div>
                 </div>
                 <div className="profileMain__actions">
                     <div className="profileMain__action">
@@ -52,10 +62,6 @@ class ProfileMain
                         >
                             Выход
                         </div>
-                    </div>
-
-                    <div className="profileMain__action _history">
-                        <div className="profileMain__actionInner _CLICK">История</div>
                     </div>
                 </div>
             </div>

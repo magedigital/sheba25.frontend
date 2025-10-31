@@ -10,20 +10,40 @@ const renderHead: I['renderHead'] = function () {
         <div className="topBar__head _SECTION">
             <div className="topBar__headInner _INNER">
                 <Media current="desktop">
-                    <a className="topBar__logo" href="#" target="_blank" rel="noreferrer">
+                    <a
+                        className="topBar__logo"
+                        href="https://sheba.ru/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img src={require('@media/sheba-logo.png')} alt="" />
                     </a>
-                    <a className="topBar__magLogo" href="#" target="_blank" rel="noreferrer">
+                    <a
+                        className="topBar__magLogo"
+                        href="https://lenta.ru"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img src={require('@media/logo-lenta.svg').default} alt="" />
                     </a>
                     {this.renderMenu()}
                 </Media>
                 <Media current="mobile">
                     <div className="topBar__logos">
-                        <a className="topBar__logo" href="#" target="_blank" rel="noreferrer">
+                        <a
+                            className="topBar__logo"
+                            href="https://sheba.ru/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <img src={require('@media/sheba-logo.png')} alt="" />
                         </a>
-                        <a className="topBar__magLogo" href="#" target="_blank" rel="noreferrer">
+                        <a
+                            className="topBar__magLogo"
+                            href="https://lenta.ru"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <img src={require('@media/logo-lenta.svg').default} alt="" />
                         </a>
                     </div>

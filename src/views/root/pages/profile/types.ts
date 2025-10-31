@@ -12,9 +12,23 @@ type StateT = {
     isReady?: boolean;
 };
 
+type ProfilePrizeT = {
+    id: string;
+    title: string;
+    url: string;
+    thumb: string;
+    code: string;
+    status: 'DOWNLOAD' | 'SENDING' | 'SENT' | 'DATA_NEEDED' | 'NEED_CODE';
+    statusTitle: string;
+    extraTitle: null | string;
+    count: number;
+    promoCode?: string;
+    expired?: string;
+};
+
 type ProfileDataT = {
     works: WorkT[];
-    prizes: {}[];
+    prizes: ProfilePrizeT[];
     checks: {
         id: string;
         date: string;
@@ -59,8 +73,7 @@ interface ProfileI extends React.Component<PropsT, StateT> {
     renderMain(this: ProfileI): React.ReactNode;
     renderCheques(this: ProfileI): React.ReactNode;
     renderPrizes(this: ProfileI): React.ReactNode;
-    renderPrize(this: ProfileI): React.ReactNode;
 }
 
 export default ProfileI;
-export type { ProfileDataT, ProfileContentT, WorkT as ProfileWorkT };
+export type { ProfileDataT, ProfileContentT, WorkT as ProfileWorkT, ProfilePrizeT };

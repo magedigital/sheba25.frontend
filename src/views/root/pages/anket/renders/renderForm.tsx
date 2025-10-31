@@ -13,13 +13,6 @@ const renderForm: I['renderForm'] = function () {
         ...this.fields[name],
     })) as FieldT[];
 
-    if (user?.isFirstAnket) {
-        fields.unshift({
-            support: 'ID пригласившего участника',
-            name: 'inv',
-        });
-    }
-
     return (
         <div className="page__form _FULL_W">
             <AnketForm
@@ -30,7 +23,7 @@ const renderForm: I['renderForm'] = function () {
                               secondName: user.personal.lastName,
                               phone: user.personal.phone,
                               mailing: user.mailing === '1',
-                              inv: localStorage.getItem('inv'),
+                              lentaCard: user.lentaCard,
                           }
                         : {}
                 }

@@ -32,6 +32,15 @@
         }
     }
 
+    &__button {
+        margin-left: auto;
+
+        @include mob {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
     &__id {
         margin-left: auto;
         padding: 16rem 26rem;

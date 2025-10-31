@@ -1,22 +1,41 @@
 import Slider from '@classes/slider/Slider';
 
-import { MainContentT } from '../index/types';
-import { products } from './static/products';
-
 type PropsT = {};
 
 type StateT = {
     isDrag?: boolean;
-    content?: MainContentT;
+    content?: ProductsContentT;
     current?: number;
+    currentId?: string;
     listKey?: number;
+};
+
+type ProductSectionT = {
+    description: {
+        title: {
+            title: string;
+            description: string;
+            thumb: string;
+        };
+    };
+    items: {
+        title: string;
+        thumb: string;
+    }[];
+};
+
+type ProductsContentT = {
+    components: {
+        header: HeaderContentT;
+        footer: FooterContentT;
+        sections: Record<string, ProductSectionT>;
+    };
 };
 
 interface ProductsI extends React.Component<PropsT, StateT> {
     props: PropsT;
     state: StateT;
 
-    products: typeof products;
     slider?: Slider;
 
     parent: React.RefObject<HTMLDivElement | null>;
@@ -27,3 +46,4 @@ interface ProductsI extends React.Component<PropsT, StateT> {
 }
 
 export default ProductsI;
+export type { ProductsContentT };

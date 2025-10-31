@@ -4,6 +4,7 @@ import { store } from '@redux/redux.ts';
 import I from '../types.ts';
 
 const sliderInit: I['sliderInit'] = function () {
+    const { content } = this.state;
     const slider = this.parent.current!.querySelector('.products__tabs') as HTMLElement;
 
     this.slider = new Slider({
@@ -24,7 +25,10 @@ const sliderInit: I['sliderInit'] = function () {
             }
 
             if (typeof currentKey === 'number') {
-                this.setState({ current: currentKey });
+                this.setState({
+                    current: currentKey,
+                    currentId: Object.keys(content!.components.sections)[currentKey],
+                });
 
                 const currentNode = this.parent.current!.querySelector(
                     `.products__tabsItem[data-id="${current}"]`,
