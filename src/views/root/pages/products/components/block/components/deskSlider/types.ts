@@ -8,6 +8,7 @@ type PropsT = {
 
 type StateT = {
     mobCurrent: number;
+    needSlider?: boolean;
 };
 
 interface DeskSliderI extends React.Component<PropsT, StateT> {

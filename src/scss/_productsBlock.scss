@@ -53,6 +53,15 @@
             }
         }
 
+        &:not(._needSlider) &Items {
+            justify-content: center;
+            width: 100%;
+        }
+
+        &:not(._needSlider) &Item {
+            opacity: 1 !important;
+        }
+
         &Item {
             width: 143rem;
             margin-right: 25rem;

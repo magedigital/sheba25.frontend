@@ -20,6 +20,7 @@ class DeskSlider
         super(props);
         this.state = {
             mobCurrent: this.mobStep,
+            needSlider: this.props.items.length > 6,
         };
 
         this.parent = React.createRef();
@@ -56,12 +57,15 @@ class DeskSlider
     }
 
     render() {
-        const { mobCurrent } = this.state;
+        const { mobCurrent, needSlider } = this.state;
         const { items, type, listCb } = this.props;
 
         return (
-            <div ref={this.parent} className="productsBlock__slider _COL">
-                {type !== 'mobile' && (
+            <div
+                ref={this.parent}
+                className={`productsBlock__slider _COL ${needSlider ? '_needSlider' : ''}`}
+            >
+                {type !== 'mobile' && needSlider && (
                     <>
                         <div className="productsBlock__sliderArrow _prev _CLICK">
                             <Icon name="arrow-long-prev" />

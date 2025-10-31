@@ -29,7 +29,7 @@
         "throttle-debounce": "^5.0.2"
     },
     "scripts": {
-        "start": "PORT=2010 dotenv -e .env.local craco start",
+        "start": "PORT=2017 dotenv -e .env.local craco start",
         "build:local": "dotenv -e .env.local craco build",
         "build:prod": "dotenv -e .env.prod craco build",
         "format": "prettier --write \"{,!(node_modules)/**/}*.{ts,tsx}\"",

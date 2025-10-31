@@ -3,9 +3,10 @@ import Slider from '@classes/slider/Slider.ts';
 import I from '../types.ts';
 
 const sliderInit: I['sliderInit'] = function () {
+    const { needSlider } = this.state;
     const { type } = this.props;
 
-    if (type === 'mobile') {
+    if (type === 'mobile' || !needSlider) {
         return;
     }
 
