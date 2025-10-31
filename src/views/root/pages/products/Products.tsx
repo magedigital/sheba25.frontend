@@ -69,7 +69,10 @@ class Products
                                             const product = content.components.sections[id];
 
                                             return (
-                                                <div className={`products__tabsItem`} key={id}>
+                                                <div
+                                                    className={`products__tabsItem ${id === 'soup' ? '_new' : ''}`}
+                                                    key={id}
+                                                >
                                                     <div className="products__tabsItemInner _COL">
                                                         <div className="products__tabsItemHead _CLICK">
                                                             <img
