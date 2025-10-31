@@ -34,6 +34,11 @@
         background: #020202;
         border: 2rem solid #c08d4e;
         border-radius: 24rem;
+
+        @include mob {
+            width: 100%;
+            padding: 16rem 16rem 32rem;
+        }
     }
 
     &__footer {

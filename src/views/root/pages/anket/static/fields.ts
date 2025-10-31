@@ -28,7 +28,7 @@ const fields = {
         fieldType: 'checkbox',
     },
     mailing: {
-        support: 'Я соглашаюсь получать рассылку с\xa0новостями акции*',
+        support: 'Я соглашаюсь получать рассылку с\xa0новостями акции',
         fieldType: 'checkbox',
     },
 } as const;
