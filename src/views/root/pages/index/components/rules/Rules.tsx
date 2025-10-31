@@ -32,7 +32,7 @@ class Rules extends React.Component<RulesI['props'], RulesI['state']> implements
                             className="indexRules__offerText"
                             dangerouslySetInnerHTML={{
                                 __html: setSpacesInText(
-                                    'В ноябре у вас есть возможность не только порадовать, но и получить подарки за покупки.',
+                                    'В ноябре у вас есть возможность не только порадовать кошку, но и получить подарки за покупки.',
                                 ),
                             }}
                         ></p>
@@ -54,7 +54,7 @@ class Rules extends React.Component<RulesI['props'], RulesI['state']> implements
                                         className="indexRules__stepText"
                                         dangerouslySetInnerHTML={{
                                             __html: setSpacesInText(
-                                                'товары-участники* <br class="_MOBILE" />с картой Лента <br class="_DESKTOP" />на сумму от 300 руб.',
+                                                'товары-участники* <br class="_MOBILE" />с картой «Лента» <br class="_DESKTOP" />на сумму от 300 руб.',
                                             ),
                                         }}
                                     ></p>

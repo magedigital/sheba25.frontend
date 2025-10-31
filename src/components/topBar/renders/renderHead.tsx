@@ -20,7 +20,7 @@ const renderHead: I['renderHead'] = function () {
                     </a>
                     <a
                         className="topBar__magLogo"
-                        href="https://lenta.ru"
+                        href="https://lenta.com/brand/sheba-10981372"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -40,7 +40,7 @@ const renderHead: I['renderHead'] = function () {
                         </a>
                         <a
                             className="topBar__magLogo"
-                            href="https://lenta.ru"
+                            href="https://lenta.com/brand/sheba-10981372"
                             target="_blank"
                             rel="noreferrer"
                         >

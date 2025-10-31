@@ -17,7 +17,7 @@ const renderFoot: I['renderFoot'] = function () {
                 {!isConfirm && (
                     <div className="popup__button">
                         <Button
-                            className="_mainEmpty"
+                            className="_main2Empty"
                             onClick={() => {
                                 changePage({ pageName: 'auth-login' });
                             }}

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import CloseBtn from '@components/closeBtn/CloseBtn.tsx';
-import Media from '@components/media/Media.tsx';
 
 import I from '../types.ts';
 
@@ -20,11 +19,9 @@ const renderHead: I['renderHead'] = function () {
                 </p>
             )}
 
-            <Media current="desktop">
-                <div className="popup__close">
-                    <CloseBtn />
-                </div>
-            </Media>
+            <div className="popup__close">
+                <CloseBtn />
+            </div>
         </div>
     );
 };

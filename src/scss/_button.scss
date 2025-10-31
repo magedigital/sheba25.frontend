@@ -109,6 +109,15 @@
         background: #020202;
     }
 
+    &._main2Empty {
+        background: linear-gradient(to right, #c08d4e, #fcd5a3, #be894b);
+    }
+
+    &._main2Empty &__inner {
+        color: #dab582;
+        background: #020202;
+    }
+
     &._green {
         background: linear-gradient(to right, #05564d, #0bbca8, #05564d);
     }

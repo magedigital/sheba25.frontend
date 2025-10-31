@@ -48,7 +48,7 @@ class Start extends React.Component<StartI['props'], StartI['state']> implements
                             onClick={() => {
                                 setStep('form', 'typing');
                             }}
-                            className="_mainEmpty"
+                            className="_main2Empty"
                         >
                             Ввести данные <br className="_DESKTOP" />
                             вручную

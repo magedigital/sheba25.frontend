@@ -17,8 +17,8 @@ class WeekPrizes
     }
 
     prizes = [
-        { thumb: 'Prize-1.png', name: 'сертификат smeg' },
-        { thumb: 'Prize-2.png', name: 'сертификат выбирай.card' },
+        { thumb: 'Prize-1.png', name: 'сертификат выбирай.card' },
+        { thumb: 'Prize-2.png', name: 'сертификат smeg' },
         { thumb: 'Prize-3.png', name: 'сертификат pandora' },
         { thumb: 'Prize-4.png', name: 'сертификат лента' },
     ];

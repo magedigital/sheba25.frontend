@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Button from '@components/button/Button.tsx';
+import changePage from '@functions/changePage.ts';
 
 import HeaderI from './types.ts';
 
@@ -21,7 +22,12 @@ class Header extends React.Component<HeaderI['props'], HeaderI['state']> impleme
                 <div className="indexHeader__slogan" />
                 <div className="indexHeader__content">
                     <div className="indexHeader__button">
-                        <Button className="_main" onClick={() => undefined}>
+                        <Button
+                            className="_main"
+                            onClick={() => {
+                                changePage({ pageName: 'cheque' });
+                            }}
+                        >
                             ЗАГРУЗИТЬ ЧЕК
                         </Button>
                     </div>
