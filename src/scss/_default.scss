@@ -252,6 +252,18 @@ a {
     margin: auto;
 }
 
+._ANIM {
+    transition: $trans;
+    will-change: transform;
+
+    &._DEFAULT {
+        &:not(._showAnim) {
+            transform: translate(0, 12rem) scale(0.98);
+            opacity: 0;
+        }
+    }
+}
+
 ._ANIMATE {
     transition: $trans;
 

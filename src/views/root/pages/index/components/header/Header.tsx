@@ -18,12 +18,14 @@ class Header extends React.Component<HeaderI['props'], HeaderI['state']> impleme
 
     render() {
         return (
-            <div ref={this.parent} className="indexHeader _SECTION">
-                <div className="indexHeader__slogan" />
-                <div className="indexHeader__content">
+            <div ref={this.parent} className="indexHeader _SECTION _ANIM" data-delay="100">
+                <div className="indexHeader__slogan _ANIM _DEFAULT" data-delay="300">
+                    <div className="indexHeader__sloganLight" />
+                </div>
+                <div className="indexHeader__content _ANIM _DEFAULT" data-delay="400">
                     <div className="indexHeader__button">
                         <Button
-                            className="_main"
+                            className="_main _light"
                             onClick={() => {
                                 changePage({ pageName: 'cheque' });
                             }}

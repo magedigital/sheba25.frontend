@@ -24,7 +24,27 @@ class Index extends React.Component<IndexI['props'], IndexI['state']> implements
             content: getLocalContent('indexContent'),
         };
 
+        this.scrollHandler = this.scrollHandler.bind(this);
+
         this.parent = React.createRef();
+    }
+
+    animateNodes: IndexI['animateNodes'] = [];
+
+    scrollHandler() {
+        this.animateNodes.forEach(({ node, delay }) => {
+            const { y } = node.getBoundingClientRect();
+
+            if (
+                y < document.documentElement.clientHeight - 150 &&
+                y + node.offsetHeight > 150 &&
+                !node.classList.contains('_showAnim')
+            ) {
+                setTimeout(() => {
+                    node.classList.add('_showAnim');
+                }, delay || 0);
+            }
+        });
     }
 
     getContent = getContent;
@@ -51,6 +71,22 @@ class Index extends React.Component<IndexI['props'], IndexI['state']> implements
                 }
             }
         }, 100);
+
+        document.querySelectorAll('._ANIM').forEach((n) => {
+            const node = n as HTMLElement;
+            const delayStr = node.getAttribute('data-delay');
+            const delay = delayStr ? +delayStr : undefined;
+
+            this.animateNodes.push({ node, delay });
+        });
+
+        this.scrollHandler();
+
+        window.addEventListener('scroll', this.scrollHandler, true);
+    }
+
+    componentWillUnmount(): void {
+        window.removeEventListener('scroll', this.scrollHandler);
     }
 
     render() {

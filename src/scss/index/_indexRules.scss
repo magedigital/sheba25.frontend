@@ -89,6 +89,19 @@
             padding-top: 12rem;
             border: 2rem solid #c08d4e;
             border-radius: 24rem;
+            animation: 1.5s rulesCard infinite ease-in-out;
+            will-change: transform;
+
+            @keyframes rulesCard {
+                0%,
+                100% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.04);
+                }
+            }
 
             @include mob {
                 height: 310rem;
@@ -108,6 +121,18 @@
 
                 @include bg("/media/steps-back.png", contain, center);
             }
+        }
+
+        &:nth-child(1) &Head {
+            animation-delay: 0s;
+        }
+
+        &:nth-child(2) &Head {
+            animation-delay: 0.5s;
+        }
+
+        &:nth-child(3) &Head {
+            animation-delay: 1s;
         }
 
         &Image {

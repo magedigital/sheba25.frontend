@@ -19,7 +19,7 @@ class Rules extends React.Component<RulesI['props'], RulesI['state']> implements
         return (
             <div ref={this.parent} className="indexRules _SECTION">
                 <div className="indexRules__inner _INNER_2">
-                    <div className="indexRules__offer">
+                    <div className="indexRules__offer _ANIM _DEFAULT" data-delay="100">
                         <p
                             className="indexRules__offerText"
                             dangerouslySetInnerHTML={{
@@ -38,9 +38,9 @@ class Rules extends React.Component<RulesI['props'], RulesI['state']> implements
                         ></p>
                     </div>
                     <div className="indexRules__content" data-ancor="rules">
-                        <h2 className="indexRules__title _TITLE">как участвовать?</h2>
+                        <h2 className="indexRules__title _TITLE _ANIM _DEFAULT" data-delay="100">как участвовать?</h2>
                         <div className="indexRules__steps">
-                            <div className="indexRules__step">
+                            <div className="indexRules__step _ANIM _DEFAULT" data-delay="100">
                                 <div className="indexRules__stepHead">
                                     <img
                                         src={require('@media/step-01.png')}
@@ -60,7 +60,7 @@ class Rules extends React.Component<RulesI['props'], RulesI['state']> implements
                                     ></p>
                                 </div>
                             </div>
-                            <div className="indexRules__step">
+                            <div className="indexRules__step _ANIM _DEFAULT" data-delay="200">
                                 <div className="indexRules__stepHead">
                                     <img
                                         src={require('@media/step-02.png')}
@@ -80,7 +80,7 @@ class Rules extends React.Component<RulesI['props'], RulesI['state']> implements
                                     ></p>
                                 </div>
                             </div>
-                            <div className="indexRules__step">
+                            <div className="indexRules__step _ANIM _DEFAULT" data-delay="300">
                                 <div className="indexRules__stepHead">
                                     <img
                                         src={require('@media/step-03.png')}

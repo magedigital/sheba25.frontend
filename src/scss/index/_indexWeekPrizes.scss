@@ -52,11 +52,40 @@
             margin-bottom: 22rem;
             background: linear-gradient(to left, #e9c37c, #ffe5c3, #bf8e4e);
             border-radius: 50%;
+            animation: 1.6s prizeWeekCard infinite ease-in-out;
+            will-change: transform;
             aspect-ratio: 1;
+
+            @keyframes prizeWeekCard {
+                0%,
+                100% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.07);
+                }
+            }
 
             @include mob {
                 width: 234rem;
             }
+        }
+
+        &:nth-child(1) &Head {
+            animation-delay: 0s;
+        }
+
+        &:nth-child(2) &Head {
+            animation-delay: 0.4s;
+        }
+
+        &:nth-child(3) &Head {
+            animation-delay: 0.8s;
+        }
+
+        &:nth-child(4) &Head {
+            animation-delay: 1.2s;
         }
 
         &Image {

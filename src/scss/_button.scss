@@ -60,6 +60,39 @@
                 opacity: 1;
             }
         }
+
+        &._light {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                width: 28rem;
+                height: 100%;
+                background: linear-gradient(90deg, rgba(#ffe09e, 0.08), rgba(#fff, 0.4) 95%, rgba(#ffe09e, 0.6));
+                animation: p5kaHeaderButton 2.5s infinite ease-in;
+                content: "";
+                pointer-events: none;
+
+                @keyframes p5kaHeaderButton {
+                    0% {
+                        transform: translate(-60rem, 0) skewX(-40deg);
+                    }
+
+                    25% {
+                        transform: translate(290rem, 0) skewX(-40deg);
+                    }
+
+                    100% {
+                        transform: translate(290rem, 0) skewX(-40deg);
+                    }
+                }
+            }
+        }
     }
 
     &._main &__inner {

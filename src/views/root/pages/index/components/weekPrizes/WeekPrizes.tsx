@@ -39,10 +39,16 @@ class WeekPrizes
         return (
             <div ref={this.parent} className="indexWeekPrizes _SECTION">
                 <div className="indexWeekPrizes__inner _INNER">
-                    <h3 className="indexWeekPrizes__title _TITLE">еженедельные призы</h3>
+                    <h3 className="indexWeekPrizes__title _TITLE _ANIM _DEFAULT" data-delay="100">
+                        еженедельные призы
+                    </h3>
                     <div className="indexWeekPrizes__cards">
                         {this.prizes.map((prize, i) => (
-                            <div className="indexWeekPrizes__card" key={i}>
+                            <div
+                                className="indexWeekPrizes__card _ANIM _DEFAULT"
+                                key={i}
+                                data-delay={100 + i * 100}
+                            >
                                 <div className="indexWeekPrizes__cardHead">
                                     <img
                                         src={require(`@media/${prize.thumb}`)}
@@ -58,10 +64,16 @@ class WeekPrizes
                         ))}
                     </div>
                     <div className="indexWeekPrizes__partners">
-                        <p className="indexWeekPrizes__partnersTitle">* в акции участвуют</p>
+                        <p className="indexWeekPrizes__partnersTitle _ANIM _DEFAULT" data-delay="100">
+                            * в акции участвуют
+                        </p>
                         <div className="indexWeekPrizes__partnersItems">
                             {this.partners.map((partner, i) => (
-                                <div className="indexWeekPrizes__partnersItem" key={i}>
+                                <div
+                                    className="indexWeekPrizes__partnersItem _ANIM _DEFAULT"
+                                    key={i}
+                                    data-delay={100 + i * 40}
+                                >
                                     <img
                                         src={require(`@media/${partner}`)}
                                         alt=""

@@ -61,6 +61,8 @@ interface IndexI extends React.Component<PropsT, StateT> {
 
     parent: React.RefObject<HTMLDivElement | null>;
 
+    animateNodes: { node: HTMLElement; delay?: number }[];
+
     getContent(this: IndexI): Promise<void>;
 }
 

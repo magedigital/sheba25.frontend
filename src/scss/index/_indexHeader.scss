@@ -3,15 +3,33 @@
     z-index: 2;
     padding: 116rem 0 66rem;
 
-    @include bg("/media/main-back-01.jpg", 100% auto, center top);
-
     @include mob {
-        @include bg("/media/main-back-01-mob.jpg", 100% auto, center top);
-
         padding: 122rem 0 0;
     }
 
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        transition: $trans;
+        content: "";
+
+        @include bg("/media/main-back-01.jpg", 100% auto, center top);
+
+        @include mob {
+            @include bg("/media/main-back-01-mob.jpg", 100% auto, center top);
+        }
+    }
+
+    &:not(._showAnim)::before {
+        opacity: 0;
+    }
+
     &__slogan {
+        position: relative;
         width: 398rem;
         height: 145rem;
         margin: 0 0 372rem 276rem;
@@ -22,6 +40,86 @@
             width: 228rem;
             height: 120rem;
             margin: 0 18rem 232rem auto;
+        }
+
+        &Light {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            width: 48rem;
+            height: 83rem;
+            overflow: hidden;
+            animation: sloganLight 2.5s infinite ease-in-out;
+            pointer-events: none;
+
+            @keyframes sloganLight {
+                0% {
+                    transform: translate(48rem, 0);
+                }
+
+                40%,
+                100% {
+                    transform: translate(-398rem, 0);
+                }
+            }
+
+            @keyframes sloganLightMob {
+                0% {
+                    transform: translate(48rem, 0);
+                }
+
+                40%,
+                100% {
+                    transform: translate(-228rem, 0);
+                }
+            }
+
+            @include mob {
+                height: 64rem;
+                animation: sloganLightMob 2.5s infinite ease-in-out;
+            }
+
+            &::after {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 398rem;
+                height: 145rem;
+                filter: brightness(150%);
+                animation: sloganLightItem 2.5s infinite ease-in-out;
+                content: "";
+
+                @include bg("/media/slogan.svg", contain, center);
+
+                @include mob {
+                    width: 228rem;
+                    height: 120rem;
+                    animation: sloganLightItemMob 2.5s infinite ease-in-out;
+                }
+
+                @keyframes sloganLightItem {
+                    0% {
+                        transform: translate(-48rem, 0);
+                    }
+
+                    40%,
+                    100% {
+                        transform: translate(398rem, 0);
+                    }
+                }
+
+                @keyframes sloganLightItemMob {
+                    0% {
+                        transform: translate(-48rem, 0);
+                    }
+
+                    40%,
+                    100% {
+                        transform: translate(228rem, 0);
+                    }
+                }
+            }
         }
     }
 
@@ -35,10 +133,23 @@
     &__button {
         width: 205rem;
         margin-bottom: 35rem;
+        animation: pulsation 2s infinite ease-in-out;
+        will-change: transform;
 
         @include mob {
             width: 270rem;
             margin-bottom: 24rem;
+        }
+
+        @keyframes pulsation {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
     }
 
