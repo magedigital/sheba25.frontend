@@ -6,6 +6,7 @@ import Anket from '../pages/anket/Anket.tsx';
 import Auth from '../pages/auth/Auth.tsx';
 import Cheque from '../pages/cheque/Cheque.tsx';
 import Faq from '../pages/faq/Faq.tsx';
+import FullAnket from '../pages/fullAnket/FullAnket.tsx';
 import Index from '../pages/index/Index.tsx';
 import Products from '../pages/products/Products.tsx';
 import Profile from '../pages/profile/Profile.tsx';
@@ -20,6 +21,11 @@ const pages = {
     anket: {
         render(this: RootI) {
             return <Anket />;
+        },
+    },
+    'full-anket': {
+        render(this: RootI) {
+            return <FullAnket />;
         },
     },
     products: {

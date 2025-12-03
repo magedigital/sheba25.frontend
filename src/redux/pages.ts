@@ -39,6 +39,14 @@ const pages = [
         getRedirect: () => ({ name: 'auth' }),
     },
     {
+        links: ['full-anket'],
+        name: 'full-anket',
+        getCond: ({ user }: StoreT) => ({
+            condition: !!user,
+        }),
+        getRedirect: () => ({ name: 'auth' }),
+    },
+    {
         links: ['profile'],
         name: 'profile',
         content: 'Личный кабинет',
