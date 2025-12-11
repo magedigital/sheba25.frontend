@@ -55,6 +55,20 @@ export default async function getAuth(redirect?: boolean): Promise<UserT | undef
         pageName = 'anket';
     }
 
+    if (user?.status === 'EXTRA_ANKET_REQUIRED') {
+        pageName = 'full-anket';
+    }
+
+    if (user?.status === 'ACT_REQUIRED') {
+        const prize = user.prizes?.find((thisPrize) => thisPrize.id === user.nextActPrizeId);
+        // const prize = user.prizes?.find((thisPrize) => thisPrize.actRequired);
+
+        if (prize) {
+            pageName = 'akt-inner';
+            ids = { '1': prize.id };
+        }
+    }
+
     if (user?.status === 'EMAIL_CONFIRM_REQUIRED') {
         pageName = 'auth-reg';
     }

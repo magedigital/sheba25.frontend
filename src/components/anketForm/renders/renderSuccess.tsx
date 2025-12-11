@@ -12,7 +12,7 @@ const renderSuccess: I['renderSuccess'] = function () {
     }
 
     return (
-        <Fade className="anketForm__success _FULL _COL _COL_CENTER" isShow={!!this.state.isSuccess}>
+        <Fade className="anketForm__success _FULL" isShow={!!isSuccess}>
             <div className="anketForm__successInner _FULL _COL _COL_CENTER">
                 <div className="anketForm__successTitle">{successTitle}</div>
                 <div className="anketForm__successDescription">{successDescription}</div>

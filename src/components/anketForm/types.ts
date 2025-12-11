@@ -21,6 +21,7 @@ type PropsT = {
     pointId?: string;
     pointAddress?: string;
     setPoint?: (id?: string, address?: string) => void;
+    resetAct?: () => void;
 };
 
 type StateT = {
@@ -35,7 +36,6 @@ type FieldT = {
     type?: InputI['props']['type'];
     reg?: InputI['props']['reg'];
     regExp?: InputI['props']['regExp'];
-    maxLen?: number;
     textarea?: InputI['props']['textarea'];
     dateWithPast?: InputI['props']['dateWithPast'];
     fieldType?: 'input' | 'checkbox' | 'upload' | 'addressPoint';

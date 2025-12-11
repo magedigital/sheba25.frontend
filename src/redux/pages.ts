@@ -47,6 +47,20 @@ const pages = [
         getRedirect: () => ({ name: 'auth' }),
     },
     {
+        links: ['act'],
+        name: 'akt',
+        getCond: ({ user }: StoreT) => ({
+            condition: !!user,
+        }),
+        getRedirect: () => ({ name: 'auth' }),
+    },
+    {
+        links: [],
+        name: 'akt-inner',
+        level: 1,
+        parentName: 'akt',
+    },
+    {
         links: ['profile'],
         name: 'profile',
         content: 'Личный кабинет',

@@ -8,7 +8,7 @@ import setSpacesInText from '@functions/setSpacesInText.ts';
 import I from '../types.ts';
 
 const renderField: I['renderField'] = function ({ field }) {
-    const { upload } = this.props;
+    const { upload, resetAct } = this.props;
     const fieldType = field.fieldType || 'input';
     const support = typeof field.support === 'function' ? field.support() : field.support;
     const addressList = this.state.addressList[field.name];
@@ -18,7 +18,7 @@ const renderField: I['renderField'] = function ({ field }) {
 
     return (
         <div
-            className={`anketForm__field ${field.textarea ? '_textarea' : ''} _FULL_W _type-${fieldType} _name-${field.name}`}
+            className={`anketForm__field _COL ${field.textarea ? '_textarea' : ''} _FULL_W _type-${fieldType} _name-${field.name}`}
             key={field.name}
         >
             {fieldType === 'input' && (
@@ -37,17 +37,13 @@ const renderField: I['renderField'] = function ({ field }) {
                             type={field.type}
                             textarea={field.textarea}
                             onChange={async ({ value }) => {
-                                if (field.maxLen) {
-                                    value = value.slice(0, field.maxLen);
-                                }
-
                                 if (field.withAddress) {
                                     await this.addressHandler({ name: field.name, value });
                                 } else {
                                     await this.change({ [field.name]: value });
                                 }
                             }}
-                            returnTemplate={false}
+                            returnTemplate={field.name !== 'phone'}
                             dateWithPast={field.dateWithPast}
                         />
                     </div>
@@ -99,6 +95,11 @@ const renderField: I['renderField'] = function ({ field }) {
                             }
                         }}
                     />
+                    {field.name === 'act' && (
+                        <p className="anketForm__fieldLink _CLICK" onClick={resetAct}>
+                            Исправить данные
+                        </p>
+                    )}
                 </>
             )}
         </div>

@@ -7,7 +7,7 @@ const focus: InputI['focus'] = function (isFocus) {
     const input = this.input.current;
 
     this.setState({ isFocus, ...(!value ? { value: isFocus ? resultValue : '' } : {}) }, () => {
-        if (!isFocus && returnTemplate && value === regInfo.template) {
+        if (!isFocus && returnTemplate && value === regInfo?.template) {
             onChange({ name, value: '' });
 
             this.setState({ value: '' });

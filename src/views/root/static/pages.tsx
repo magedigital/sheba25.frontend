@@ -2,6 +2,7 @@ import React from 'react';
 
 import RootI from '../types.ts';
 
+import Akt from '../pages/akt/Akt.tsx';
 import Anket from '../pages/anket/Anket.tsx';
 import Auth from '../pages/auth/Auth.tsx';
 import Cheque from '../pages/cheque/Cheque.tsx';
@@ -26,6 +27,11 @@ const pages = {
     'full-anket': {
         render(this: RootI) {
             return <FullAnket />;
+        },
+    },
+    act: {
+        render(this: RootI) {
+            return <Akt />;
         },
     },
     products: {

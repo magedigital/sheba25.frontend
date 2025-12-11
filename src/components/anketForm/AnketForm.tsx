@@ -81,9 +81,10 @@ class AnketForm extends EditBlock<AnketFormI['props'], AnketFormI['state']> impl
                 ref={this.parent}
                 className={`anketForm _COL _COL_H_CENTER ${isSuccess ? '_success' : ''}`}
             >
-                {renderHead ? renderHead() : undefined}
                 {this.renderSuccess()}
-                <div className="anketForm__inner _FULL_W _COL _COL_H_CENTER">
+                <div className="anketForm__inner _COL _COL_H_CENTER">
+                    {renderHead ? renderHead() : undefined}
+
                     {model && (
                         <div className="anketForm__fields _FULL_W">
                             {fields.map((field) => this.renderField({ field }))}
@@ -96,7 +97,7 @@ class AnketForm extends EditBlock<AnketFormI['props'], AnketFormI['state']> impl
                     <Error className="anketForm__error" error={error} />
                     <div className="anketForm__button">
                         <Button
-                            className="_main"
+                            className="_mainEmpty"
                             onClick={this.sendForm.bind(this)}
                             loading={loadingKey === 'send'}
                         >

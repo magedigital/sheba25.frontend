@@ -1,6 +1,11 @@
 type UserT = {
     userId: string;
-    status: 'EXTRA_ANKET_REQUIRED' | 'ANKET_REQUIRED' | 'PARTICIPANT' | 'EMAIL_CONFIRM_REQUIRED';
+    status:
+        | 'EXTRA_ANKET_REQUIRED'
+        | 'ANKET_REQUIRED'
+        | 'PARTICIPANT'
+        | 'EMAIL_CONFIRM_REQUIRED'
+        | 'ACT_REQUIRED';
     personal: {
         firstName: string;
         lastName: string;
@@ -22,6 +27,8 @@ type UserT = {
         }
     >;
     isFirstAnket: boolean;
+    nextActPrizeId?: string;
+    prizes?: { id: string }[];
 };
 
 export default UserT;
