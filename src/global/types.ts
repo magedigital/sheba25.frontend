@@ -24,6 +24,7 @@ declare global {
         scrollGoals: Record<string, boolean>;
         advcake_data?: any[];
         fivepost?: any;
+        daDataToken: string;
     }
 
     namespace NodeJS {
