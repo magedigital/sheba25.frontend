@@ -29,7 +29,7 @@ const pages = {
             return <FullAnket />;
         },
     },
-    act: {
+    akt: {
         render(this: RootI) {
             return <Akt />;
         },
