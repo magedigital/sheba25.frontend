@@ -28,7 +28,7 @@ type UserT = {
     >;
     isFirstAnket: boolean;
     nextActPrizeId?: string;
-    prizes?: { id: string }[];
+    prizes?: { id: string; userPrizeId: string }[];
 };
 
 export default UserT;

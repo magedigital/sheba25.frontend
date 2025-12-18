@@ -1,4 +1,3 @@
-import changePage from '@functions/changePage.ts';
 import getAuth from '@functions/getAuth.ts';
 import AxiosInst from '@functions/initAxios.ts';
 import sendGoal from '@functions/sendGoal.ts';
@@ -28,9 +27,7 @@ const sendForm: I['sendForm'] = async function (data) {
         );
 
         if (response.result === 'OK') {
-            await getAuth();
-
-            changePage({ pageName: 'profile' });
+            await getAuth(true);
 
             localStorage.removeItem('inv');
 

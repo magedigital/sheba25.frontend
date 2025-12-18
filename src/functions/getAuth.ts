@@ -60,7 +60,9 @@ export default async function getAuth(redirect?: boolean): Promise<UserT | undef
     }
 
     if (user?.status === 'ACT_REQUIRED') {
-        const prize = user.prizes?.find((thisPrize) => thisPrize.id === user.nextActPrizeId);
+        const prize = user.prizes?.find(
+            (thisPrize) => thisPrize.userPrizeId === user.nextActPrizeId,
+        );
         // const prize = user.prizes?.find((thisPrize) => thisPrize.actRequired);
 
         if (prize) {
